@@ -4,6 +4,7 @@ import { Button } from './ui/button';
 import Link from 'next/link';
 import {
 	Home,
+	LogOutIcon,
 	Package,
 	PanelBottom,
 	Settings,
@@ -20,7 +21,7 @@ import {
 const Sidebar = () => {
 	return (
 		<div className="flex w-full flex-col bg-muted/40">
-			<aside className="fixed inset-y-0 left-0 w-14 z-10 hidden border-r bg-background sm:flex">
+			<aside className="fixed inset-y-0 left-0 w-14 z-10 hidden border-r bg-background sm:flex flex-col">
 				<nav className="flex flex-col items-center gap-4 px-2 py-5">
 					<TooltipProvider>
 						<Link
@@ -101,6 +102,23 @@ const Sidebar = () => {
 							<TooltipContent side="right">
 								Configurações
 							</TooltipContent>
+						</Tooltip>
+					</TooltipProvider>
+				</nav>
+
+				<nav className="mt-auto flex flex-col items-center gap-4 px-2 py-5">
+					<TooltipProvider>
+						<Tooltip>
+							<TooltipTrigger asChild>
+								<Link
+									href="#"
+									className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg text-muted-foreground transition-colors hover:text-foreground"
+								>
+									<LogOutIcon className="w-5 h-5 text-red-800" />
+									<span className="sr-only">Sair</span>
+								</Link>
+							</TooltipTrigger>
+							<TooltipContent side="right">Sair</TooltipContent>
 						</Tooltip>
 					</TooltipProvider>
 				</nav>
