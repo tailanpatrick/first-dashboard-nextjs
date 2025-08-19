@@ -195,7 +195,7 @@ const Sidebar = () => {
 						</SheetContent>
 					</Sheet>
 
-					<h2>Menu</h2>
+					<h2 className="font-bold">Menu</h2>
 				</header>
 			</div>
 		</div>
