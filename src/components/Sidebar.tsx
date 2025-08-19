@@ -1,5 +1,11 @@
 import React from 'react';
-import { Sheet, SheetTrigger, SheetContent } from './ui/sheet';
+import {
+	Sheet,
+	SheetTrigger,
+	SheetContent,
+	SheetHeader,
+	SheetTitle,
+} from './ui/sheet';
 import { Button } from './ui/button';
 import Link from 'next/link';
 import {
@@ -140,6 +146,10 @@ const Sidebar = () => {
 							</Button>
 						</SheetTrigger>
 
+						<SheetHeader className="flex justify-end">
+							<SheetTitle>Menu</SheetTitle>
+						</SheetHeader>
+
 						<SheetContent side="left" className="sm:max-w-xs p-5">
 							<nav className="grid gap-6 text-lg font-medium">
 								<Link
@@ -194,8 +204,6 @@ const Sidebar = () => {
 							</nav>
 						</SheetContent>
 					</Sheet>
-
-					<h2 className="font-bold">Menu</h2>
 				</header>
 			</div>
 		</div>
