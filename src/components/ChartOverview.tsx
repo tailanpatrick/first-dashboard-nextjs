@@ -1,5 +1,5 @@
 'use client';
-import { DollarSign } from 'lucide-react';
+import { ShoppingCart } from 'lucide-react';
 import { Card, CardContent, CardHeader, CardTitle } from './ui/card';
 import {
 	ChartConfig,
@@ -11,21 +11,22 @@ import { Bar, BarChart, CartesianGrid, XAxis } from 'recharts';
 
 const ChartOverview = () => {
 	const chartData = [
-		{ month: 'Janeiro', desktop: 186, mobile: 80 },
-		{ month: 'Fevereiro', desktop: 305, mobile: 200 },
-		{ month: 'Março', desktop: 237, mobile: 120 },
-		{ month: 'Abril', desktop: 73, mobile: 190 },
-		{ month: 'Maio', desktop: 209, mobile: 130 },
-		{ month: 'Junho', desktop: 214, mobile: 140 },
+		{ month: 'Janeiro', site: 120, marketplace: 80 },
+		{ month: 'Fevereiro', site: 200, marketplace: 150 },
+		{ month: 'Março', site: 180, marketplace: 130 },
+		{ month: 'Abril', site: 90, marketplace: 110 },
+		{ month: 'Maio', site: 250, marketplace: 170 },
+		{ month: 'Junho', site: 300, marketplace: 210 },
 	];
+
 	const chartConfig = {
-		desktop: {
-			label: 'Desktop',
-			color: '#2563eb',
+		site: {
+			label: 'Site Próprio',
+			color: '#2563eb', // azul
 		},
-		mobile: {
-			label: 'Mobile',
-			color: '#60a5fa',
+		marketplace: {
+			label: 'Marketplace',
+			color: '#60a5fa', // azul claro
 		},
 	} satisfies ChartConfig;
 
@@ -34,9 +35,9 @@ const ChartOverview = () => {
 			<CardHeader>
 				<div className="flex items-center justify-center">
 					<CardTitle className="text-lg sm:text-xl text-gray-800">
-						Overview vendas
+						Overview de Vendas
 					</CardTitle>
-					<DollarSign className="ml-auto w-5 h-5" />
+					<ShoppingCart className="ml-auto w-5 h-5 text-blue-600" />
 				</div>
 			</CardHeader>
 
@@ -56,13 +57,13 @@ const ChartOverview = () => {
 							tickFormatter={(value) => value.slice(0, 3)}
 						/>
 						<Bar
-							dataKey="desktop"
-							fill="var(--color-desktop)"
+							dataKey="site"
+							fill="var(--color-site)"
 							radius={4}
 						/>
 						<Bar
-							dataKey="mobile"
-							fill="var(--color-mobile)"
+							dataKey="marketplace"
+							fill="var(--color-marketplace)"
 							radius={4}
 						/>
 					</BarChart>
